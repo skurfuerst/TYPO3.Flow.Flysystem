@@ -1,0 +1,15 @@
+{
+    "name": "typo3/flow-flysystem",
+    "type": "typo3-flow-package",
+    "description": "Wrapper package for the flysystem package holding common code to share between specific integrations.",
+    "require": {
+        "typo3/flow": "*",
+        "league/event": "~2.0@dev",
+        "league/flysystem": "0.5.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "TYPO3\\Flow\\Flysystem": "Classes"
+        }
+    }
+}

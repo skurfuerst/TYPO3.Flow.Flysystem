@@ -1,0 +1,2 @@
+TYPO3\Flow\Flysystem\FilesystemFactoryInterface:
+  className: TYPO3\Flow\Flysystem\FilesystemFactory
