@@ -345,13 +345,13 @@ class GenericWritableStorage implements StorageInterface, WritableStorageInterfa
 	/**
 	 * Retrieve all Objects stored in this storage, filtered by the given collection name
 	 *
-	 * @param string $collectionName
+	 * @param \TYPO3\Flow\Resource\CollectionInterface $collection
 	 * @return array<\TYPO3\Flow\Resource\Storage\Object>
 	 * @api
 	 */
-	public function getObjectsByCollectionName($collectionName) {
+	public function getObjectsByCollection(\TYPO3\Flow\Resource\CollectionInterface $collection) {
 		$objects = array();
-		foreach ($this->resourceRepository->findByCollectionName($collectionName) as $resource) {
+		foreach ($this->resourceRepository->findByCollection($collection) as $resource) {
 			/** @var \TYPO3\Flow\Resource\Resource $resource */
 			$object = new \TYPO3\Flow\Resource\Storage\Object();
 			$object->setFilename($resource->getFilename());
