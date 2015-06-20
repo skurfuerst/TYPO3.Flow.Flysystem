@@ -79,6 +79,20 @@ class FilesystemFactory implements FilesystemFactoryInterface {
 		return $filesystem;
 	}
 
+	protected function createS3Connection($options) {
+		$client = \Aws\S3\S3Client::factory([
+			'credentials' => [
+				'key'    => $options['s3key'],
+				'secret' => $options['s3secret'],
+			],
+			'region' => $options['s3region'],
+			'version' => 'latest',
+		]);
+
+		$filesystem = new Filesystem(new \League\Flysystem\AwsS3v3\AwsS3Adapter($client, $options['s3bucket'], $options['s3prefix']));
+		return $filesystem;
+	}
+
 	/**
 	 * Generates a unique string for this connection definition to reuse existing connections with the same options.
 	 *
