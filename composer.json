@@ -4,8 +4,8 @@
     "description": "Wrapper package for the flysystem package holding common code to share between specific integrations.",
     "require": {
         "typo3/flow": "*",
-        "league/event": "~2.0@dev",
-        "league/flysystem": "0.5.*"
+        "league/event": "~2.1",
+        "league/flysystem": "~1.0"
     },
     "autoload": {
         "psr-0": {
