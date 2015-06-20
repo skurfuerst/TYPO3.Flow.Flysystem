@@ -162,7 +162,7 @@ abstract class Target implements \TYPO3\Flow\Resource\Target\TargetInterface {
 	public function publishCollection(Collection $collection) {
 		foreach ($collection->getObjects() as $object) {
 			/** @var \TYPO3\Flow\Resource\Storage\Object $object */
-			$this->publishFile($object->getDataUri(), $this->getRelativePublicationPathAndFilename($object));
+			$this->publishStream($object->getStream(), $this->getRelativePublicationPathAndFilename($object));
 		}
 	}
 

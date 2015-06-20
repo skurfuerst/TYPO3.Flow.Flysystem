@@ -176,7 +176,7 @@ class GenericWritableStorage implements StorageInterface, WritableStorageInterfa
 	 * @return Resource A resource object representing the imported resource
 	 * @throws Exception
 	 */
-	public function importResourceFromContent($content, $collectionName, $filename) {
+	public function importResourceFromContent($content, $collectionName, $filename = NULL) {
 		$temporaryTargetPathAndFilename = $this->environment->getPathToTemporaryDirectory() . uniqid('TYPO3_Flow_ResourceImport_');
 		try {
 			file_put_contents($temporaryTargetPathAndFilename, $content);
